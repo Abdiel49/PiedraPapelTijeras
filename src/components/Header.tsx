@@ -1,6 +1,7 @@
+import '@styles/header.style.css';
 
 const Header = () => {
-  return <header>
+  return <header className='header'>
     <h1>Piedra, Papel o tijera</h1>
   </header>;
 };
