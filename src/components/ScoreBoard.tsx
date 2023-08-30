@@ -4,9 +4,14 @@ import '@styles/scoreBoard.style.css';
 
 const ScoreBoard = ({score1, score2}: ScoreBoardProps) => {
   return <section className="scoreBoard">
-    <h2>{score1}</h2>
-    <h2>-</h2>
-    <h2>{score2}</h2>
+    <div className="scoreBoard_marker ">
+      <p className="scoreBoard_marker_item">{score1}</p>
+      <p className="scoreBoard_marker_item">-</p>
+      <p className="scoreBoard_marker_item">{score2}</p>
+    </div>
+    <div>
+      <p className="scoreBoard_name">Marcador</p>
+    </div>
   </section>;
 };
 

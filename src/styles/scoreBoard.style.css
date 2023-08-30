@@ -1,6 +1,27 @@
 .scoreBoard {
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  place-items: center;
+}
+
+.scoreBoard_marker {
+  display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+}
+
+.scoreBoard_marker_item {
+  margin-left: 5px;
+  font-size: 3.2em;
+  line-height: 0.01em;
+}
+
+.scoreBoard_name {
+  margin: 0;
+  padding: 0;
 }
