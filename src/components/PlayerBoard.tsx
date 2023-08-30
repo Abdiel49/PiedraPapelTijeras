@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface PlayerBoardProps {
   onSelectOption?: () => void;
 }

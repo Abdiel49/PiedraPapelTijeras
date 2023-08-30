@@ -22,12 +22,12 @@
     "noFallthroughCasesInSwitch": true,
     
     /* Paths */
-    "baseUrl": "./src/",
+    "baseUrl": ".",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@styles/*": ["styles/*"],
-      "@types": ["types/Types"]
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@types": ["src/types/Types"]
     }
   },
   "include": ["src"],
