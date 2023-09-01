@@ -27,13 +27,11 @@
   max-height: 150px;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
+  border: 0;
 }
 
 .player-board_option-img {
   width: 120px;
   height: 120px;
-}
-
-.player-board_selected-option {
-
 }

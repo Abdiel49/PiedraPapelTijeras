@@ -1,30 +1,23 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo} from 'react';
 
 import FistImg from '@assets/fist.png';
 import PaperImg from '@assets/hello.png';
 import ShearsImg from '@assets/peace.png';
+import { options } from '@assets/game/game';
+
+import { Option, PlayerBoardProps } from '@types';
 import '@styles/playerBoard.style.css';
 
-import { Option } from '@types';
-
-interface PlayerBoardProps {
-  onSelectOption?: () => void;
-  display?: 'left' | 'right' ;
-  player?: 'self' | 'pc';
-}
-
-const options: Option[] = ['piedra', 'papel', 'tijeras']
 
 export const PlayerBoard = (props: PlayerBoardProps) => {
-  const [selectedOption, setSelectedOption] = useState<Option>();
-  
   const player = useMemo(() => (
     props.player === 'self' ? 'Tu' : 'PC'
   ), [props.player])
 
-  const onSelecOption = (option: Option) => {
-    setSelectedOption(option)
-  }
+  const onSelecOption = useCallback((option: Option) => {
+    props.onSelectOption && props.onSelectOption(option);
+  }, [props.onSelectOption]);
+
 
   return (
     <section className={`${player === 'PC' ? 'player-board_reverse' : 'player-board'}`}>
@@ -33,9 +26,10 @@ export const PlayerBoard = (props: PlayerBoardProps) => {
           <p>{player}</p>
           {props.player === 'self' && <p>Selecciona una opción</p>}
           {options.map((option, index) => (
-            <div
+            <button
               key={index}
               className='player-board_option-card' 
+              disabled={props.disableOptions}
               onClick={() => onSelecOption(option)}>
               <img 
                 className='player-board_option-img'
@@ -45,22 +39,22 @@ export const PlayerBoard = (props: PlayerBoardProps) => {
                   : option === 'papel' ? PaperImg : ShearsImg}
                 alt={option}
               />
-            </div>  
+            </button>  
           ))}
         </div>
       </section>
       <section>
-        {selectedOption && (
+        {props.selectedOption && (
           <div className='player-board_option-card'>
             <img 
                 className='player-board_option-img'
                 src={
-                  selectedOption === 'piedra' ? 
+                  props.selectedOption === 'piedra' ? 
                     FistImg 
-                  : selectedOption === 'papel' ? PaperImg : ShearsImg}
-                alt={selectedOption}
+                  : props.selectedOption === 'papel' ? PaperImg : ShearsImg}
+                alt={props.selectedOption}
               />
-            <p>{selectedOption}</p>
+            <p>{props.selectedOption}</p>
           </div>
         )}
       </section>
