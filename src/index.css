@@ -21,6 +21,13 @@ body {
   min-height: 100vh;
 }
 
+.main-board-game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /*
 a {
   font-weight: 500;
