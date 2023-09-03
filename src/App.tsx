@@ -6,9 +6,17 @@ import { PlayerBoard } from "@components/PlayerBoard";
 
 import { useGame } from "@hooks/useGame";
 import { options } from "@assets/game/game";
+import { GameEvents } from "@components/GameEvents";
 
 const App: React.FC = () => {
-  const {play, gameStatus, pcStatus, playerStatus} = useGame(options, 1800);
+  const {
+    play,
+    gameStatus,
+    showSelections,
+    showResult,
+    pcStatus,
+    playerStatus
+  } = useGame(options, 1600);
   
   return (
     <div className="App">
@@ -19,6 +27,13 @@ const App: React.FC = () => {
           player="self"
           onSelectOption={play}
           selectedOption={playerStatus.selectedOption}
+        />
+        <GameEvents 
+          showChoises={showSelections}
+          showResult={showResult}
+          pcSelectedOption={pcStatus.selectedOption}
+          playerSelectedOption={playerStatus.selectedOption}
+          gameStatus={gameStatus}
         />
         <PlayerBoard 
           player="pc" 

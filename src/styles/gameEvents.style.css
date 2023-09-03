@@ -1,0 +1,17 @@
+.game-events-container {
+  display: flex;
+  height: 500px;
+  flex-direction: row;
+  flex-grow: 3;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.game-events-divisor {
+  flex-grow: 1;
+  width: 5px;
+  min-height: 400px;
+  max-width: 2px;
+  min-width: 1px;
+  background-color: gray;
+}

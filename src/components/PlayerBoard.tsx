@@ -43,21 +43,6 @@ export const PlayerBoard = (props: PlayerBoardProps) => {
           ))}
         </div>
       </section>
-      <section>
-        {props.selectedOption && (
-          <div className='player-board_option-card'>
-            <img 
-                className='player-board_option-img'
-                src={
-                  props.selectedOption === 'piedra' ? 
-                    FistImg 
-                  : props.selectedOption === 'papel' ? PaperImg : ShearsImg}
-                alt={props.selectedOption}
-              />
-            <p>{props.selectedOption}</p>
-          </div>
-        )}
-      </section>
     </section>
   )
 }
