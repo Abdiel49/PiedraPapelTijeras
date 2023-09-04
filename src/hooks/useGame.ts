@@ -49,7 +49,7 @@ export const useGame = (options: Option[], timeout = 1000) => {
   
   // Game selections handle
   useEffect(() => {
-    let timer: number;
+    let timer: NodeJS.Timeout;
     if (showSelections) {
       timer = setTimeout(() => {
         setShowResult(true);
@@ -61,7 +61,7 @@ export const useGame = (options: Option[], timeout = 1000) => {
 
   // Game result handle
   useEffect(() => {
-    let timer: number;
+    let timer: NodeJS.Timeout;
     const timeout2 = timeout * 0.86;
     if (showResult) {
       timer = setTimeout(() => {
