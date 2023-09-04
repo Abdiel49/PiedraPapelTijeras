@@ -3,20 +3,17 @@ import PaperImg from '@assets/hello.png';
 import ShearsImg from '@assets/peace.png';
 
 import '@styles/gameEvents.style.css';
-import { GameStatus, Option } from '@types';
+import { GameEventsProps } from '@types';
 
-export interface GameEventsProps {
-  pcSelectedOption?: Option;
-  playerSelectedOption?: Option;
-  gameStatus?: GameStatus;
-  showResult?: boolean;
-  showChoises?: boolean;
-}
 
-// const GameMessages = 
+
 export const GameEvents = (props: GameEventsProps) => {
 
-  const gameMessage = props.gameStatus === 'You Win' ? '¡Ganaste!' : props.gameStatus === 'PC Wins' ? 'Perdiste!' :  props.gameStatus === 'Equal' ? '¡Empate!' : '';
+  const gameMessage = props.gameStatus === 'You Win' 
+    ? '¡Ganaste!' 
+    : props.gameStatus === 'PC Wins' 
+    ? 'Perdiste!' 
+    :  props.gameStatus === 'Equal' ? '¡Empate!' : '';
 
   return (
     <div className='game-events-container'>

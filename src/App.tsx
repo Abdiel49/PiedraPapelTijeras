@@ -15,7 +15,8 @@ const App: React.FC = () => {
     showSelections,
     showResult,
     pcStatus,
-    playerStatus
+    playerStatus,
+    isPlaying,
   } = useGame(options, 1600);
   
   return (
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           player="self"
           onSelectOption={play}
           selectedOption={playerStatus.selectedOption}
+          disableOptions={isPlaying}
         />
         <GameEvents 
           showChoises={showSelections}

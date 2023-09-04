@@ -52,7 +52,6 @@ export const useGame = (options: Option[], timeout = 1000) => {
     let timer: number;
     if (showSelections) {
       timer = setTimeout(() => {
-        console.log(`This will run after <<< 1 >>> ${timeout} second!`)
         setShowResult(true);
         setShowSelections(false);
       }, timeout);
@@ -66,7 +65,6 @@ export const useGame = (options: Option[], timeout = 1000) => {
     const timeout2 = timeout * 0.86;
     if (showResult) {
       timer = setTimeout(() => {
-        console.log(`This will run after <<< 2 >>> ${timeout2} second!`)
         reset();
       }, timeout2);
     }

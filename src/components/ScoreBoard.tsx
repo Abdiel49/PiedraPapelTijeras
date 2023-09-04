@@ -1,7 +1,6 @@
 import { ScoreBoardProps } from "@types";
 import '@styles/scoreBoard.style.css';
 
-
 const ScoreBoard = ({score1, score2}: ScoreBoardProps) => {
   return <section className="scoreBoard">
     <div className="scoreBoard_marker ">
