@@ -1,4 +1,4 @@
-import { useCallback, useMemo} from 'react';
+import { useMemo} from 'react';
 
 import FistImg from '@assets/fist.png';
 import PaperImg from '@assets/hello.png';
@@ -15,9 +15,9 @@ export const PlayerBoard = (props: PlayerBoardProps) => {
     props.player === 'self' ? 'Tu' : 'PC'
   ), [props.player])
 
-  const onSelecOption = useCallback((option: Option) => {
+  const onSelecOption = (option: Option) => {
     props.onSelectOption && props.onSelectOption(option);
-  }, [props.onSelectOption]);
+  };
 
 
   return (
