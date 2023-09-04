@@ -4,6 +4,7 @@
   justify-content: space-around;
   align-items: center;
   flex-grow: 1;
+  max-width: 33%;
 }
 
 .player-board_reverse {
@@ -12,6 +13,7 @@
   justify-content: space-around;
   align-items: center;
   flex-grow: 1;
+  max-width: 33%;
 }
 
 .player-board_options {
@@ -23,6 +25,8 @@
 }
 
 .player-board_option-card {
+  display: flex;
+  flex-direction: column;
   width: 150px;
   max-height: 150px;
   justify-content: center;

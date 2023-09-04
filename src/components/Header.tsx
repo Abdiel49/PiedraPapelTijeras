@@ -1,8 +1,9 @@
 import '@styles/header.style.css';
+import Paragraph from './atoms/Paragraph';
 
 const Header = () => {
   return <header className='header'>
-    <h1>Piedra, Papel o tijera</h1>
+    <Paragraph value={'Piedra, Papel o tijera'} center title />
   </header>;
 };
 

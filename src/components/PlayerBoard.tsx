@@ -7,6 +7,7 @@ import { options } from '@assets/game/game';
 
 import { Option, PlayerBoardProps } from '@types';
 import '@styles/playerBoard.style.css';
+import Paragraph from './atoms/Paragraph';
 
 
 export const PlayerBoard = (props: PlayerBoardProps) => {
@@ -21,28 +22,28 @@ export const PlayerBoard = (props: PlayerBoardProps) => {
 
   return (
     <section className={`${player === 'PC' ? 'player-board_reverse' : 'player-board'}`}>
-      <section>
-        <div className='player-board_options'>
-          <p>{player}</p>
-          {props.player === 'self' && <p>Selecciona una opción</p>}
-          {options.map((option, index) => (
-            <button
-              key={index}
-              className='player-board_option-card' 
-              disabled={props.disableOptions}
-              onClick={() => onSelecOption(option)}>
-              <img 
-                className='player-board_option-img'
-                src={
-                  option === 'piedra' ? 
-                    FistImg 
-                  : option === 'papel' ? PaperImg : ShearsImg}
-                alt={option}
-              />
-            </button>  
-          ))}
-        </div>
-      </section>
+      <div className='player-board_options'>
+        <Paragraph value={player} title center/>
+        {props.player === 'self' && (
+          <Paragraph value={'Selecciona una opción'} subTitle center/>
+        )}
+        {options.map((option, index) => (
+          <button
+            key={index}
+            className='player-board_option-card' 
+            disabled={props.disableOptions}
+            onClick={() => onSelecOption(option)}>
+            <img 
+              className='player-board_option-img'
+              src={
+                option === 'piedra' ? 
+                  FistImg 
+                : option === 'papel' ? PaperImg : ShearsImg}
+              alt={option}
+            />
+          </button>  
+        ))}
+      </div>
     </section>
   )
 }

@@ -23,9 +23,10 @@ body {
 
 .main-board-game {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 @media (prefers-color-scheme: light) {

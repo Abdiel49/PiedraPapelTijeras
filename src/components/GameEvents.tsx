@@ -4,6 +4,7 @@ import ShearsImg from '@assets/peace.png';
 
 import '@styles/gameEvents.style.css';
 import { GameEventsProps } from '@types';
+import Paragraph from './atoms/Paragraph';
 
 
 
@@ -29,7 +30,7 @@ export const GameEvents = (props: GameEventsProps) => {
                     : props.playerSelectedOption === 'papel' ? PaperImg : ShearsImg}
                   alt={props.playerSelectedOption}
                 />
-              <p>{props.playerSelectedOption}</p>
+              <Paragraph value={props.playerSelectedOption} center subTitle />
             </div>
           )}
         </section>
@@ -39,7 +40,7 @@ export const GameEvents = (props: GameEventsProps) => {
 
       {props.showResult && (
         <div>
-          <h3>{gameMessage}</h3>
+          <Paragraph value={gameMessage} center title />
         </div>
       )}
       
@@ -56,7 +57,7 @@ export const GameEvents = (props: GameEventsProps) => {
                     : props.pcSelectedOption === 'papel' ? PaperImg : ShearsImg}
                   alt={props.pcSelectedOption}
                 />
-              <p>{props.pcSelectedOption}</p>
+              <Paragraph value={props.pcSelectedOption} center subTitle />
             </div>
           )}
         </section>

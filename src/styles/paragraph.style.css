@@ -7,7 +7,6 @@
   
   color-scheme: light dark;
   color: rgb(27, 27, 27);
-  /* background-color: #242424; */
   font-size: medium;
 }
 
@@ -22,11 +21,15 @@
 
 .paragraph_sub_title {
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .paragraph_body {
   font-size: 24px;
+}
+
+.paragraph_center {
+  text-align: center;
 }
 
 @media (prefers-color-scheme: light) {
