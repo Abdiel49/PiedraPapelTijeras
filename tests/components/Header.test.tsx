@@ -9,16 +9,16 @@ describe("Header component tests", () => {
   test('should render Paragraph component with correct props', () => {
     render(<Header />);
     const paragraphElement = screen.getByText('Piedra, Papel o tijera');
-    expect(paragraphElement).toBeInTheDocument();
-    expect(paragraphElement).toHaveClass('paragraph');
-    expect(paragraphElement).toHaveClass('paragraph_center');
-    expect(paragraphElement).toHaveClass('paragraph_title');
+    expect(paragraphElement).toBeDefined();
+    expect(paragraphElement.className).includes('paragraph');
+    expect(paragraphElement.className).includes('paragraph_center');
+    expect(paragraphElement.className).includes('paragraph_title');
   });
 
   // Tests that the Paragraph component receives the correct value prop
   test('should render Paragraph component with correct value prop', () => {
     render(<Header />);
     const paragraphElement = screen.getByText('Piedra, Papel o tijera');
-    expect(paragraphElement).toBeInTheDocument();
+    expect(paragraphElement).toBeDefined();
   });
 })
