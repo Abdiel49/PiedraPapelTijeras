@@ -20,3 +20,13 @@ export interface GameEventsProps {
   showResult?: boolean;
   showChoises?: boolean;
 }
+
+export interface ParagraphPros {
+  value: string | number;
+  title?: boolean;
+  subTitle?: boolean;
+  body?: boolean;
+  className?: string;
+  bold?: boolean
+  center?: boolean;
+}

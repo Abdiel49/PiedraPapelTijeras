@@ -1,17 +1,8 @@
 import '@styles/paragraph.style.css';
-
-export interface ParagraphPros {
-  value: string | number;
-  title?: boolean;
-  subTitle?: boolean;
-  body?: boolean;
-  className?: string;
-  bold?: boolean
-  center?: boolean;
-}
+import { ParagraphPros } from '@types';
 
 const Paragraph = (props: ParagraphPros) => {
-  const style = `paragraph ${props.title && "paragraph_title"} ${props.subTitle && 'paragraph_sub_title'} ${props.center && 'paragraph_center'} ${props.body && 'paragraph_body'}`;
+  const style = `paragraph ${!!props.title && "paragraph_title"} ${!!props.subTitle && 'paragraph_sub_title'} ${!!props.center && 'paragraph_center'} ${!!props.body && 'paragraph_body'} ${props.bold && 'paragraph_bold'} ${props.className}`;
 
   return <p className={style}>{props.value}</p>;
 };

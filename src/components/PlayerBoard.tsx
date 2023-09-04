@@ -1,5 +1,7 @@
 import { useMemo} from 'react';
 
+import Paragraph from './atoms/Paragraph';
+
 import FistImg from '@assets/fist.png';
 import PaperImg from '@assets/hello.png';
 import ShearsImg from '@assets/peace.png';
@@ -7,8 +9,6 @@ import { options } from '@assets/game/game';
 
 import { Option, PlayerBoardProps } from '@types';
 import '@styles/playerBoard.style.css';
-import Paragraph from './atoms/Paragraph';
-
 
 export const PlayerBoard = (props: PlayerBoardProps) => {
   const player = useMemo(() => (
